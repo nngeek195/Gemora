@@ -226,7 +226,7 @@ export default function HomeView() {
           <div className="text-center mt-12">
             <button
               onClick={() => window.location.href = '/providers'}
-              className="text-white py-3 px-8 rounded-full text-lg font-bold bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 transition-all shadow-xl shadow-blue-300 flex items-center justify-center mx-auto transform hover:scale-105"
+              className="text-black py-3 px-8 rounded-full text-lg font-bold bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 transition-all shadow-xl shadow-blue-300 flex items-center justify-center mx-auto transform hover:scale-105"
             >
               <MapPin className="w-5 h-5 mr-3" /> View All 20 Master Cutters →
             </button>

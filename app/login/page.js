@@ -171,7 +171,7 @@ export default function LoginSignup() {
                 {currentUser ? (
                     <button
                         onClick={handleLogout}
-                        className="py-2 px-4 rounded-lg text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors flex items-center shadow-md"
+                        className="py-2 px-4 rounded-lg text-sm font-semibold text-black bg-blue-600 hover:bg-blue-700 transition-colors flex items-center shadow-md"
                         disabled={isLoading}
                     >
                         <LogOut className="w-4 h-4 inline mr-2" /> Logout
@@ -179,7 +179,7 @@ export default function LoginSignup() {
                 ) : (
                     <button
                         onClick={() => window.location.href = '/login'}
-                        className="py-2 px-4 rounded-lg text-sm font-semibold text-white bg-blue-800 transition-colors flex items-center shadow-md"
+                        className="py-2 px-4 rounded-lg text-sm font-semibold text-black bg-blue-800 transition-colors flex items-center shadow-md"
                         aria-current="page"
                     >
                         <LogIn className="w-4 h-4 inline mr-2" /> Login
@@ -238,7 +238,7 @@ export default function LoginSignup() {
                             <button
                                 onClick={handleGoogleSignIn}
                                 disabled={isSigningIn}
-                                className={`w-full py-3 px-4 rounded-xl text-lg font-bold text-white transition-all duration-300 shadow-lg flex items-center justify-center 
+                                className={`w-full py-3 px-4 rounded-xl text-lg font-bold text-black transition-all duration-300 shadow-lg flex items-center justify-center 
                                     ${isSigningIn ? 'bg-gray-500 cursor-wait' : 'bg-blue-600 hover:bg-blue-700 shadow-blue-300/50'}`}
                             >
                                 {isSigningIn ? (

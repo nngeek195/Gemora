@@ -73,7 +73,7 @@ export default function ProvidersPage() {
             </div>
             <nav className="flex items-center space-x-3">
                 <button onClick={() => window.location.href = '/'} className={`py-2 px-3 rounded-lg text-sm font-medium transition-colors text-gray-600 hover:bg-gray-50`}>Home</button>
-                <button className="text-white py-2 px-4 rounded-lg text-sm font-bold bg-gradient-to-r from-yellow-600 to-amber-500 shadow-lg flex items-center">
+                <button className="text-black py-2 px-4 rounded-lg text-sm font-bold bg-gradient-to-r from-yellow-600 to-amber-500 shadow-lg flex items-center">
                     <Users className="w-4 h-4 inline mr-1" /> Service Providers
                 </button>
                 <button onClick={() => window.location.href = '/login'} className="py-2 px-3 rounded-lg text-sm font-medium text-black bg-accent hover:bg-[#5cb9ff] transition-colors flex items-center">
