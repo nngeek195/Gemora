@@ -444,7 +444,7 @@ export default function ProfileView() {
                     </div>
 
                     <div className="pt-4">
-                        <button type="submit" disabled={isLoading} className={`w-full py-3 px-4 rounded-lg font-bold text-white transition-colors shadow-lg flex items-center justify-center 
+                        <button type="submit" disabled={isLoading} className={`w-full py-3 px-4 rounded-lg font-bold text-black transition-colors shadow-lg flex items-center justify-center 
                             ${isLoading ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-800 hover:bg-blue-900 shadow-blue-300/50'}`}>
                             {isLoading ? <><RotateCw className="w-5 h-5 mr-2 animate-spin" /> Saving...</> : <>Save Details and Start Analyzing</>}
                         </button>
@@ -473,7 +473,7 @@ export default function ProfileView() {
                         onClick={() => setShowHistory(!showHistory)}
                         disabled={showWelcomeModal || isHistoryLoading}
                         className={`py-2 px-4 rounded-lg text-sm font-bold transition-colors flex items-center shadow-sm 
-                            ${showHistory ? 'text-white bg-blue-800 hover:bg-blue-900' : 'text-gray-600 bg-gray-100 hover:bg-gray-200'} ${showWelcomeModal || isHistoryLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            ${showHistory ? 'text-black bg-blue-800 hover:bg-blue-900' : 'text-gray-600 bg-gray-100 hover:bg-gray-200'} ${showWelcomeModal || isHistoryLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
                         <History className="w-4 h-4 inline mr-2" /> {showHistory ? 'New Prediction' : 'View History'}
                     </button>
@@ -506,7 +506,7 @@ export default function ProfileView() {
                 <button
                     onClick={handlePrediction}
                     disabled={isLoading || !gemFile}
-                    className={`w-full py-3 px-4 rounded-lg font-bold text-white transition-all duration-300 shadow-lg flex items-center justify-center 
+                    className={`w-full py-3 px-4 rounded-lg font-bold text-black transition-all duration-300 shadow-lg flex items-center justify-center 
                         ${isLoading || !gemFile ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-800 hover:bg-blue-900 shadow-blue-300/50'}`}
                 >
                     {isLoading ? <><RotateCw className="w-5 h-5 mr-2 animate-spin" /> Analyzing Geometry...</> : <><Sparkles className="w-5 h-5 mr-2" /> Run AI Analysis</>}
@@ -525,7 +525,7 @@ export default function ProfileView() {
                             <button
                                 onClick={handleSavePrediction}
                                 disabled={isLoading}
-                                className={`mt-5 w-full py-3 px-4 rounded-lg font-bold text-white transition-colors flex items-center justify-center 
+                                className={`mt-5 w-full py-3 px-4 rounded-lg font-bold text-black transition-colors flex items-center justify-center 
                                     ${isLoading ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 shadow-blue-300/50'}`}
                             >
                                 <Save className='w-5 h-5 mr-2' /> Save Result to History
