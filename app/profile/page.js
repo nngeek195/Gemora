@@ -76,20 +76,20 @@ const ProviderActions = ({ provider }) => (
     <div className="flex justify-around space-x-2 mt-3 pt-3 border-t border-gray-200">
         <a href="#" className="flex items-center text-sm text-gray-600 hover:text-blue-600 transition-colors"><Phone className="w-4 h-4 mr-1" /> Call</a>
         <a href="#" className="flex items-center text-sm text-gray-600 hover:text-green-600 transition-colors"><MessageCircle className="w-4 h-4 mr-1" /> WhatsApp</a>
-        <a href="#" target="_blank" rel="noreferrer" className="flex items-center text-sm text-gray-600 hover:text-pink-600 transition-colors"><MapPin className="w-4 h-4 mr-1" /> Location</a>
+        <a href="#" target="_blank" rel="noreferrer" className="flex items-center text-sm text-gray-600 hover:text-blue-700 transition-colors"><MapPin className="w-4 h-4 mr-1" /> Location</a>
     </div>
 );
 
 const ServiceProviderCard = ({ provider, isHighlighted = false }) => (
     <div
         className={`p-5 rounded-xl transition-all duration-300 transform hover:shadow-xl hover:scale-[1.03] shadow-lg
-      ${isHighlighted ? 'bg-amber-50 border-2 border-amber-400' : 'bg-white border border-gray-200'}`}
+      ${isHighlighted ? 'bg-blue-50 border-2 border-blue-400' : 'bg-white border border-gray-200'}`}
     >
         <div className="flex items-center">
-            <Diamond className={`w-6 h-6 mr-3 ${isHighlighted ? 'text-amber-700' : 'text-gray-500'}`} />
+            <Diamond className={`w-6 h-6 mr-3 ${isHighlighted ? 'text-blue-700' : 'text-gray-500'}`} />
             <div>
                 <h4 className="font-bold text-lg text-gray-900">{provider.name}</h4>
-                <p className="text-xs font-medium text-pink-600">{provider.specialty}</p>
+                <p className="text-xs font-medium text-blue-600">{provider.specialty}</p>
             </div>
         </div>
         <p className="text-sm text-gray-500 mt-2 flex items-center">
@@ -407,7 +407,7 @@ export default function ProfileView() {
         return (
             <div className="min-h-screen bg-gray-50 font-inter flex justify-center items-center">
                 <div className="text-gray-700 flex flex-col items-center">
-                    <RotateCw className="w-8 h-8 mb-2 text-pink-600 animate-spin" />
+                    <RotateCw className="w-8 h-8 mb-2 text-blue-800 animate-spin" />
                     <p className="text-lg font-medium">{!authReady ? 'Initializing Authentication...' : 'Redirecting to Login...'}</p>
                 </div>
             </div>
@@ -418,9 +418,9 @@ export default function ProfileView() {
 
     const renderWelcomeModal = () => (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
-            <div className="bg-white p-8 rounded-2xl shadow-3xl w-full max-w-lg mx-4 transform transition-all duration-300 scale-100 border border-pink-100">
+            <div className="bg-white p-8 rounded-2xl shadow-3xl w-full max-w-lg mx-4 transform transition-all duration-300 scale-100 border border-blue-100">
                 <div className="text-center mb-6">
-                    <Award className="w-10 h-10 mx-auto text-pink-600 animate-pulse" />
+                    <Award className="w-10 h-10 mx-auto text-blue-800 animate-pulse" />
                     <h3 className="text-3xl font-extrabold text-gray-900 mt-3">Welcome to Gemora!</h3>
                     <p className="text-gray-600 mt-1">Tell us a little about your goals to personalize your experience.</p>
                 </div>
@@ -428,15 +428,15 @@ export default function ProfileView() {
                 <form onSubmit={handleWelcomeSubmit} className="space-y-4">
                     <div>
                         <label htmlFor="name" className="block text-sm font-semibold text-gray-700">Your Preferred Name</label>
-                        <input id="name" type="text" placeholder="Enter your name" required value={onboardingData.name} onChange={(e) => setOnboardingData({ ...onboardingData, name: e.target.value })} className="mt-1 block w-full rounded-lg border border-gray-300 shadow-sm p-3 focus:ring-pink-500 focus:border-pink-500" />
+                        <input id="name" type="text" placeholder="Enter your name" required value={onboardingData.name} onChange={(e) => setOnboardingData({ ...onboardingData, name: e.target.value })} className="mt-1 block w-full rounded-lg border border-gray-300 shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500" />
                     </div>
                     <div>
                         <label htmlFor="contact" className="block text-sm font-semibold text-gray-700">Contact Number (For service providers)</label>
-                        <input id="contact" type="tel" placeholder="+94 77 XXXXXXX" required value={onboardingData.contact} onChange={(e) => setOnboardingData({ ...onboardingData, contact: e.target.value })} className="mt-1 block w-full rounded-lg border border-gray-300 shadow-sm p-3 focus:ring-pink-500 focus:border-pink-500" />
+                        <input id="contact" type="tel" placeholder="+94 77 XXXXXXX" required value={onboardingData.contact} onChange={(e) => setOnboardingData({ ...onboardingData, contact: e.target.value })} className="mt-1 block w-full rounded-lg border border-gray-300 shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500" />
                     </div>
                     <div>
                         <label htmlFor="knowledge" className="block text-sm font-semibold text-gray-700">Your knowledge about gems?</label>
-                        <select id="knowledge" required value={onboardingData.knowledge} onChange={(e) => setOnboardingData({ ...onboardingData, knowledge: e.target.value })} className="mt-1 block w-full rounded-lg border border-gray-300 shadow-sm p-3 bg-white focus:ring-pink-500 focus:border-pink-500">
+                        <select id="knowledge" required value={onboardingData.knowledge} onChange={(e) => setOnboardingData({ ...onboardingData, knowledge: e.target.value })} className="mt-1 block w-full rounded-lg border border-gray-300 shadow-sm p-3 bg-white focus:ring-blue-500 focus:border-blue-500">
                             <option value="beginner">Beginner (First time rough stone owner)</option>
                             <option value="hobbyist">Hobbyist (I collect occasionally)</option>
                             <option value="trader">Trader/Jeweler (Professional experience)</option>
@@ -445,7 +445,7 @@ export default function ProfileView() {
 
                     <div className="pt-4">
                         <button type="submit" disabled={isLoading} className={`w-full py-3 px-4 rounded-lg font-bold text-white transition-colors shadow-lg flex items-center justify-center 
-                            ${isLoading ? 'bg-gray-400 cursor-not-allowed' : 'bg-pink-600 hover:bg-pink-700 shadow-pink-300/50'}`}>
+                            ${isLoading ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-800 hover:bg-blue-900 shadow-blue-300/50'}`}>
                             {isLoading ? <><RotateCw className="w-5 h-5 mr-2 animate-spin" /> Saving...</> : <>Save Details and Start Analyzing</>}
                         </button>
                     </div>
@@ -462,18 +462,18 @@ export default function ProfileView() {
         return (
             <header className="flex justify-between items-center px-6 py-4 bg-white border-b border-gray-100 shadow-md sticky top-0 z-20">
                 <div className="flex items-center text-3xl font-black text-gray-900 tracking-tighter">
-                    <Diamond className="w-8 h-8 text-pink-600 mr-2" />
-                    <span className="text-pink-600">Gem</span><span className="text-gray-900">ora</span>
+                    <Diamond className="w-8 h-8 text-blue-800 mr-2" />
+                    <span className="text-blue-800">Gem</span><span className="text-gray-900">ora</span>
                 </div>
                 <nav className="flex items-center space-x-4">
                     <div className="flex items-center text-sm font-semibold text-gray-700 p-2 rounded-full bg-gray-100">
-                        <User className="w-4 h-4 mr-1 text-pink-600" /> **{firstName}**
+                        <User className="w-4 h-4 mr-1 text-blue-800" /> **{firstName}**
                     </div>
                     <button
                         onClick={() => setShowHistory(!showHistory)}
                         disabled={showWelcomeModal || isHistoryLoading}
                         className={`py-2 px-4 rounded-lg text-sm font-bold transition-colors flex items-center shadow-sm 
-                            ${showHistory ? 'text-white bg-pink-600 hover:bg-pink-700' : 'text-gray-600 bg-gray-100 hover:bg-gray-200'} ${showWelcomeModal || isHistoryLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            ${showHistory ? 'text-white bg-blue-800 hover:bg-blue-900' : 'text-gray-600 bg-gray-100 hover:bg-gray-200'} ${showWelcomeModal || isHistoryLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
                         <History className="w-4 h-4 inline mr-2" /> {showHistory ? 'New Prediction' : 'View History'}
                     </button>
@@ -489,15 +489,15 @@ export default function ProfileView() {
         <div className="flex flex-col lg:flex-row bg-white shadow-2xl rounded-xl p-8 space-y-8 lg:space-y-0 lg:space-x-8 border border-gray-100">
 
             <div className="lg:w-1/3 space-y-4">
-                <h3 className="text-xl font-bold text-pink-600 flex items-center">1. Upload Gemstone</h3>
+                <h3 className="text-xl font-bold text-blue-800 flex items-center">1. Upload Gemstone</h3>
 
-                <label htmlFor="file-upload" className="block w-full h-56 p-4 text-center border-4 border-dashed border-pink-200 bg-pink-50 rounded-lg cursor-pointer hover:bg-pink-100 transition duration-300 relative overflow-hidden">
+                <label htmlFor="file-upload" className="block w-full h-56 p-4 text-center border-4 border-dashed border-blue-200 bg-blue-50 rounded-lg cursor-pointer hover:bg-blue-100 transition duration-300 relative overflow-hidden">
                     <input id="file-upload" ref={fileInputRef} type="file" accept="image/jpeg,image/png,image/jpg" onChange={handleFileChange} className="hidden" />
                     {previewUrl ?
                         <img src={previewUrl} alt="Gem Preview" className="object-contain h-full w-full" /> :
                         <div className="flex flex-col items-center justify-center h-full">
-                            <UploadCloud className="w-10 h-10 text-pink-600 mb-2" />
-                            <span className="text-md font-bold text-pink-700">Click to Upload Rough Stone</span>
+                            <UploadCloud className="w-10 h-10 text-blue-800 mb-2" />
+                            <span className="text-md font-bold text-blue-800">Click to Upload Rough Stone</span>
                             <span className="text-xs text-gray-500 mt-1">(Max 5MB PNG/JPG)</span>
                         </div>
                     }
@@ -507,7 +507,7 @@ export default function ProfileView() {
                     onClick={handlePrediction}
                     disabled={isLoading || !gemFile}
                     className={`w-full py-3 px-4 rounded-lg font-bold text-white transition-all duration-300 shadow-lg flex items-center justify-center 
-                        ${isLoading || !gemFile ? 'bg-gray-400 cursor-not-allowed' : 'bg-pink-600 hover:bg-pink-700 shadow-pink-300/50'}`}
+                        ${isLoading || !gemFile ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-800 hover:bg-blue-900 shadow-blue-300/50'}`}
                 >
                     {isLoading ? <><RotateCw className="w-5 h-5 mr-2 animate-spin" /> Analyzing Geometry...</> : <><Sparkles className="w-5 h-5 mr-2" /> Run AI Analysis</>}
                 </button>
@@ -515,18 +515,18 @@ export default function ProfileView() {
 
             <div className="lg:w-2/3 flex flex-col justify-between">
                 <div>
-                    <h3 className="text-xl font-bold text-pink-600 mb-4 flex items-center">2. AI Result & Save</h3>
+                    <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center">2. AI Result & Save</h3>
                     {cutPrediction ? (
-                        <div className="p-6 rounded-xl border-4 border-amber-500 bg-amber-50 shadow-inner">
-                            <p className="text-lg text-amber-700 font-semibold flex items-center"><Sparkles className='w-5 h-5 mr-2' /> OPTIMAL RECOMMENDED CUT:</p>
-                            <div className="text-5xl font-black text-amber-900 mt-2 tracking-wider">{cutPrediction.toUpperCase()}</div>
+                        <div className="p-6 rounded-xl border-4 border-blue-500 bg-blue-50 shadow-inner">
+                            <p className="text-lg text-blue-700 font-semibold flex items-center"><Sparkles className='w-5 h-5 mr-2' /> OPTIMAL RECOMMENDED CUT:</p>
+                            <div className="text-5xl font-black text-blue-900 mt-2 tracking-wider">{cutPrediction.toUpperCase()}</div>
 
-                            <p className="text-md text-amber-700 mt-3">This shape is predicted to maximize the **brilliance** and retain the highest possible **carat weight** based on the rough stone's geometry.</p>
+                            <p className="text-md text-blue-700 mt-3">This shape is predicted to maximize the **brilliance** and retain the highest possible **carat weight** based on the rough stone's geometry.</p>
                             <button
                                 onClick={handleSavePrediction}
                                 disabled={isLoading}
                                 className={`mt-5 w-full py-3 px-4 rounded-lg font-bold text-white transition-colors flex items-center justify-center 
-                                    ${isLoading ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700 shadow-green-300/50'}`}
+                                    ${isLoading ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 shadow-blue-300/50'}`}
                             >
                                 <Save className='w-5 h-5 mr-2' /> Save Result to History
                             </button>
@@ -546,7 +546,7 @@ export default function ProfileView() {
 
     const renderHistorySection = () => (
         <div className="bg-white shadow-2xl rounded-xl p-8 space-y-6 border border-gray-100">
-            <h3 className="text-3xl font-bold text-pink-600 flex items-center border-b pb-4">
+            <h3 className="text-3xl font-bold text-blue-800 flex items-center border-b pb-4">
                 <History className="w-7 h-7 mr-2" /> Your Analysis History ({history.length} Saved)
             </h3>
 
@@ -554,21 +554,21 @@ export default function ProfileView() {
 
             <div className="space-y-4">
                 {history.length > 0 ? history.map((item, index) => (
-                    <div key={item.id} className={`p-4 rounded-lg border flex items-center transition-all shadow-sm ${index === 0 ? 'bg-pink-50 border-pink-400/70' : 'bg-white border-gray-200 hover:shadow-md'}`}>
+                    <div key={item.id} className={`p-4 rounded-lg border flex items-center transition-all shadow-sm ${index === 0 ? 'bg-blue-50 border-blue-400/70' : 'bg-white border-gray-200 hover:shadow-md'}`}>
 
                         <div className="w-20 h-20 mr-4 bg-gray-200 rounded-lg overflow-hidden flex-shrink-0 border border-gray-300">
                             {/* 💡 MODIFIED: Use a placeholder icon since images are no longer stored/fetched from Storage */}
-                            <Diamond className="w-full h-full p-4 text-pink-500" />
+                            <Diamond className="w-full h-full p-4 text-blue-500" />
                         </div>
 
                         <div className='flex-grow'>
                             <p className="font-extrabold text-xl text-gray-900">{item.cut.toUpperCase()}</p>
                             <p className="text-sm text-gray-600 mt-0.5">Rough Stone: **{item.stone || 'Unnamed Stone'}** | Saved: {item.date}</p>
-                            <p className="text-xs text-amber-700 mt-1">Owner Profile: {item.knowledgeLevel.toUpperCase()}</p>
+                            <p className="text-xs text-blue-700 mt-1">Owner Profile: {item.knowledgeLevel.toUpperCase()}</p>
                         </div>
 
                         <div className="flex flex-col space-y-1 ml-4 flex-shrink-0">
-                            <button onClick={() => alert(`Showing providers for ${item.cut}`)} className="text-pink-600 text-sm font-semibold hover:underline">
+                            <button onClick={() => alert(`Showing providers for ${item.cut}`)} className="text-blue-800 text-sm font-semibold hover:underline">
                                 View Cutters
                             </button>
                             <button className="text-red-500 text-sm font-semibold hover:underline flex items-center" onClick={() => handleDeleteHistoryItem(item)} disabled={isLoading}>
@@ -600,16 +600,16 @@ export default function ProfileView() {
 
                     <div className="flex items-center justify-between pb-4 border-b border-gray-200">
                         <h2 className="text-4xl font-extrabold text-gray-900 flex items-center">
-                            <User className="w-8 h-8 mr-3 text-pink-600" /> Your Gem Profile
+                            <User className="w-8 h-8 mr-3 text-blue-800" /> Your Gem Profile
                         </h2>
-                        <button className="text-gray-500 hover:text-pink-700 flex items-center text-sm font-semibold transition-colors" onClick={() => window.location.href = '/'}>
+                        <button className="text-gray-500 hover:text-blue-800 flex items-center text-sm font-semibold transition-colors" onClick={() => window.location.href = '/'}>
                             <ArrowLeft className="w-4 h-4 mr-1" /> Return to Home
                         </button>
                     </div>
 
                     {isHistoryLoading && (
                         <div className="text-center p-8 bg-white rounded-xl shadow-lg">
-                            <RotateCw className="w-6 h-6 mx-auto text-pink-600 animate-spin mb-3" />
+                            <RotateCw className="w-6 h-6 mx-auto text-blue-800 animate-spin mb-3" />
                             <p className="text-gray-600 font-medium">Loading profile and analysis history...</p>
                         </div>
                     )}
@@ -625,7 +625,7 @@ export default function ProfileView() {
                                     {recommendedProviders.map((p, i) => <ServiceProviderCard key={i} provider={p} isHighlighted={i === 0} />)}
                                 </div>
                                 <div className="text-center mt-8">
-                                    <button className="text-pink-600 hover:text-pink-800 font-semibold flex items-center justify-center mx-auto transition-colors" onClick={() => window.location.href = '/providers'}>
+                                    <button className="text-blue-800 hover:text-blue-900 font-semibold flex items-center justify-center mx-auto transition-colors" onClick={() => window.location.href = '/providers'}>
                                         View all {SRI_LANKA_LOCATIONS.length} local cutters →
                                     </button>
                                 </div>

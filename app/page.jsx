@@ -25,7 +25,7 @@ const ProviderActions = ({ provider }) => (
   <div className="flex justify-around space-x-2 mt-3 pt-3 border-t border-gray-200">
     <a
       href={`tel:${provider.phone || '#'}`}
-      className="flex items-center text-sm text-gray-600 hover:text-blue-600 transition-colors font-medium group"
+      className="flex items-center text-sm text-gray-600 hover:text-blue-800 transition-colors font-medium group"
     >
       <Phone className="w-4 h-4 mr-1 group-hover:scale-105 transition-transform" /> Call
     </a>
@@ -33,7 +33,7 @@ const ProviderActions = ({ provider }) => (
       href={`https://wa.me/${provider.whatsapp || '#'}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center text-sm text-gray-600 hover:text-green-600 transition-colors font-medium group"
+      className="flex items-center text-sm text-gray-600 hover:text-blue-600 transition-colors font-medium group"
     >
       <MessageCircle className="w-4 h-4 mr-1 group-hover:scale-105 transition-transform" /> WhatsApp
     </a>
@@ -41,7 +41,7 @@ const ProviderActions = ({ provider }) => (
       href={provider.mapLink || '#'}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center text-sm text-gray-600 hover:text-pink-600 transition-colors font-medium group"
+      className="flex items-center text-sm text-gray-600 hover:text-blue-700 transition-colors font-medium group"
     >
       <MapPin className="w-4 h-4 mr-1 group-hover:scale-105 transition-transform" /> Location
     </a>
@@ -60,16 +60,16 @@ const Rating = ({ score = 4.8 }) => (
 const ServiceProviderCard = ({ provider, isHighlighted = false }) => (
   <div
     className={`p-6 rounded-2xl transition-all duration-500 transform hover:shadow-2xl hover:scale-[1.03] shadow-lg
-      ${isHighlighted ? 'bg-white border-2 border-amber-500/50' : 'bg-white border border-gray-200'}`}
+      ${isHighlighted ? 'bg-white border-2 border-blue-500/50' : 'bg-white border border-gray-200'}`}
   >
     <div className="flex items-start justify-between">
       <div className="flex items-start">
-        <div className={`p-2 rounded-full mr-4 ${isHighlighted ? 'bg-amber-100/70' : 'bg-gray-100'}`}>
-          <Diamond className={`w-5 h-5 ${isHighlighted ? 'text-amber-700' : 'text-gray-500'}`} aria-hidden="true" />
+        <div className={`p-2 rounded-full mr-4 ${isHighlighted ? 'bg-blue-100/70' : 'bg-gray-100'}`}>
+          <Diamond className={`w-5 h-5 ${isHighlighted ? 'text-blue-700' : 'text-gray-500'}`} aria-hidden="true" />
         </div>
         <div>
           <h4 className="font-extrabold text-xl text-gray-900">{provider.name}</h4>
-          <p className="text-sm font-semibold text-pink-600 mt-0.5">{provider.specialty}</p>
+          <p className="text-sm font-semibold text-blue-600 mt-0.5">{provider.specialty}</p>
         </div>
       </div>
     </div>
@@ -131,13 +131,13 @@ export default function HomeView() {
   const renderHeader = () => (
     <header className="flex justify-between items-center px-6 py-4 bg-white border-b border-gray-100 shadow-md sticky top-0 z-20">
       <div className="flex items-center text-3xl font-black text-gray-900 tracking-tighter">
-        <Diamond className="w-8 h-8 text-pink-600 mr-2" />
-        <span className="text-pink-600">Gem</span><span className="text-gray-900">ora</span>
+        <Diamond className="w-8 h-8 text-blue-800 mr-2" />
+        <span className="text-blue-800">Gem</span><span className="text-gray-900">ora</span>
       </div>
       <nav className="flex items-center space-x-4">
         <button
           onClick={() => window.location.href = '/'}
-          className={`py-2 px-4 rounded-lg text-sm font-semibold transition-colors text-pink-600 bg-pink-50 hover:bg-pink-100`}
+          className={`py-2 px-4 rounded-lg text-sm font-semibold transition-colors text-blue-800 bg-blue-50 hover:bg-blue-100`}
           aria-current="page"
         >
           Home
@@ -145,7 +145,7 @@ export default function HomeView() {
 
         <button
           onClick={() => window.location.href = '/providers'}
-          className="text-white py-2 px-4 rounded-lg text-sm font-bold bg-gradient-to-r from-pink-600 to-amber-500 hover:from-pink-700 hover:to-amber-600 transition-all shadow-md shadow-pink-200 flex items-center transform hover:scale-[1.02]"
+          className="text-black py-2 px-4 rounded-lg text-sm font-bold bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 transition-all shadow-md shadow-blue-200 flex items-center transform hover:scale-[1.02]"
         >
           <Users className="w-4 h-4 inline mr-2" /> Master Cutters
         </button>
@@ -170,10 +170,10 @@ export default function HomeView() {
 
       <main className="p-4 md:p-10">
         {/* --- Gem Upload Hero Section (Central Feature) --- */}
-        <section className="text-center py-16 px-4 bg-white shadow-3xl rounded-3xl max-w-3xl mx-auto border-4 border-dashed border-pink-100/50">
-          <Sparkles className="mx-auto w-14 h-14 text-pink-600 animate-pulse" />
+        <section className="text-center py-16 px-4 bg-white shadow-3xl rounded-3xl max-w-3xl mx-auto border-4 border-dashed border-blue-100/50">
+          <Sparkles className="mx-auto w-14 h-14 text-blue-800 animate-pulse" />
           <h2 className="text-5xl font-extrabold text-gray-900 mt-4 tracking-tight">
-            Analyze Your <span className="text-pink-600">Rough Gem</span>
+            Analyze Your <span className="text-blue-800">Rough Gem</span>
           </h2>
           <p className="text-xl text-gray-600 mt-3 mb-10 max-w-lg mx-auto">
             Our AI Gemologist predicts the optimal cut for maximum **brilliance** and **value**.
@@ -183,10 +183,10 @@ export default function HomeView() {
             htmlFor="file-upload"
             className={`block w-full p-10 text-center rounded-2xl cursor-pointer transition duration-500 
               ${isUploading
-                ? 'border-4 border-solid border-pink-400 bg-pink-100/50'
+                ? 'border-4 border-solid border-blue-500 bg-blue-50'
                 : error
                   ? 'border-4 border-solid border-red-500 bg-red-50 hover:bg-red-100'
-                  : 'border-4 border-dashed border-pink-400 bg-pink-50 hover:bg-pink-100'}`}
+                  : 'border-4 border-dashed border-blue-400 bg-blue-50 hover:bg-blue-100'}`}
           >
             <input
               id="file-upload"
@@ -199,14 +199,14 @@ export default function HomeView() {
             />
             {isUploading ? (
               <div className="flex flex-col items-center">
-                <div className="animate-spin rounded-full h-14 w-14 border-b-4 border-pink-700 mb-4"></div>
-                <span className="font-extrabold text-pink-700 text-2xl">Analyzing Gem...</span>
+                <div className="animate-spin rounded-full h-14 w-14 border-b-4 border-blue-800 mb-4"></div>
+                <span className="font-extrabold text-blue-800 text-2xl">Analyzing Gem...</span>
                 <span className="block text-sm text-gray-600 mt-2">Processing image data for optimal geometry.</span>
               </div>
             ) : (
               <>
-                <UploadCloud className="mx-auto w-14 h-14 text-pink-600 mb-3" />
-                <span className="font-extrabold text-pink-700 text-xl md:text-2xl">Drop or Tap to Upload Image</span>
+                <UploadCloud className="mx-auto w-14 h-14 text-blue-800 mb-3" />
+                <span className="font-extrabold text-blue-800 text-xl md:text-2xl">Drop or Tap to Upload Image</span>
                 <span className="block text-sm text-gray-500 mt-1">Maximum 5MB (PNG or JPG). **No sign-up required.**</span>
               </>
             )}
@@ -226,7 +226,7 @@ export default function HomeView() {
           <div className="text-center mt-12">
             <button
               onClick={() => window.location.href = '/providers'}
-              className="text-white py-3 px-8 rounded-full text-lg font-bold bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 transition-all shadow-xl shadow-amber-300 flex items-center justify-center mx-auto transform hover:scale-105"
+              className="text-white py-3 px-8 rounded-full text-lg font-bold bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 transition-all shadow-xl shadow-blue-300 flex items-center justify-center mx-auto transform hover:scale-105"
             >
               <MapPin className="w-5 h-5 mr-3" /> View All 20 Master Cutters →
             </button>

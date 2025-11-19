@@ -158,8 +158,8 @@ export default function LoginSignup() {
     const renderHeader = () => (
         <header className="flex justify-between items-center px-6 py-4 bg-white border-b border-gray-100 shadow-md sticky top-0 z-20">
             <div className="flex items-center text-3xl font-black text-gray-900 tracking-tighter">
-                <Diamond className="w-8 h-8 text-pink-600 mr-2" />
-                <span className="text-pink-600">Gem</span><span className="text-gray-900">ora</span>
+                <Diamond className="w-8 h-8 text-blue-800 mr-2" />
+                <span className="text-blue-800">Gem</span><span className="text-gray-900">ora</span>
             </div>
             <nav className="flex items-center space-x-4">
                 <button
@@ -171,7 +171,7 @@ export default function LoginSignup() {
                 {currentUser ? (
                     <button
                         onClick={handleLogout}
-                        className="py-2 px-4 rounded-lg text-sm font-semibold text-white bg-red-500 hover:bg-red-600 transition-colors flex items-center shadow-md"
+                        className="py-2 px-4 rounded-lg text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors flex items-center shadow-md"
                         disabled={isLoading}
                     >
                         <LogOut className="w-4 h-4 inline mr-2" /> Logout
@@ -179,7 +179,7 @@ export default function LoginSignup() {
                 ) : (
                     <button
                         onClick={() => window.location.href = '/login'}
-                        className="py-2 px-4 rounded-lg text-sm font-semibold text-white bg-pink-600 transition-colors flex items-center shadow-md"
+                        className="py-2 px-4 rounded-lg text-sm font-semibold text-white bg-blue-800 transition-colors flex items-center shadow-md"
                         aria-current="page"
                     >
                         <LogIn className="w-4 h-4 inline mr-2" /> Login
@@ -194,7 +194,7 @@ export default function LoginSignup() {
         return (
             <div className="min-h-screen bg-gray-50 font-inter flex justify-center items-center">
                 <div className="text-gray-700 flex flex-col items-center">
-                    <RotateCw className="w-8 h-8 mb-2 text-pink-600 animate-spin" />
+                    <RotateCw className="w-8 h-8 mb-2 text-blue-800 animate-spin" />
                     <p className="text-lg font-medium">Checking authentication...</p>
                 </div>
             </div>
@@ -215,7 +215,7 @@ export default function LoginSignup() {
                         {currentUser ? (
                             <CheckCircle className="w-12 h-12 mx-auto text-green-500 mb-4" />
                         ) : (
-                            <Lock className="w-12 h-12 mx-auto text-pink-600 mb-4" />
+                            <Lock className="w-12 h-12 mx-auto text-blue-800 mb-4" />
                         )}
                         <h2 className="text-3xl font-extrabold text-gray-900">{currentUser ? 'Authentication Successful' : 'Sign In to Gemora'}</h2>
                         <p className="text-gray-500 mt-2">
@@ -239,7 +239,7 @@ export default function LoginSignup() {
                                 onClick={handleGoogleSignIn}
                                 disabled={isSigningIn}
                                 className={`w-full py-3 px-4 rounded-xl text-lg font-bold text-white transition-all duration-300 shadow-lg flex items-center justify-center 
-                                    ${isSigningIn ? 'bg-gray-500 cursor-wait' : 'bg-red-600 hover:bg-red-700 shadow-red-300/50'}`}
+                                    ${isSigningIn ? 'bg-gray-500 cursor-wait' : 'bg-blue-600 hover:bg-blue-700 shadow-blue-300/50'}`}
                             >
                                 {isSigningIn ? (
                                     <>
