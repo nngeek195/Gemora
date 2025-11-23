@@ -165,14 +165,14 @@ export default function LoginSignup() {
             <nav className="flex items-center space-x-4">
                 <button
                     onClick={() => window.location.href = '/'}
-                    className={`py-2 px-4 rounded-lg text-sm font-semibold transition-colors text-gray-600 hover:bg-gray-100`}
+                    className={`py-2 px-4 rounded-lg text-sm font-bold shadow-md shadow-blue-200 hover:scale-[1.02] text-blue-900 transition-all`}
                 >
                     Home
                 </button>
                 {currentUser ? (
                     <button
                         onClick={handleLogout}
-                        className="py-2 px-4 rounded-lg text-sm font-semibold text-black bg-blue-600 hover:bg-blue-700 transition-colors flex items-center shadow-md"
+                        className="py-2 px-4 rounded-lg text-sm font-bold text-blue-900 transition-all flex items-center shadow-md shadow-blue-200 hover:scale-[1.02]"
                         disabled={isLoading}
                     >
                         <LogOut className="w-4 h-4 inline mr-2" /> Logout
@@ -180,7 +180,7 @@ export default function LoginSignup() {
                 ) : (
                     <button
                         onClick={() => window.location.href = '/login'}
-                        className="py-2 px-4 rounded-lg text-sm font-semibold text-black bg-blue-800 transition-colors flex items-center shadow-md"
+                        className="py-2 px-4 rounded-lg text-sm font-bold text-blue-900 transition-all flex items-center shadow-md shadow-blue-200 hover:scale-[1.02]"
                         aria-current="page"
                     >
                         <LogIn className="w-4 h-4 inline mr-2" /> Login
