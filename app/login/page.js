@@ -229,7 +229,7 @@ export default function LoginSignup() {
                     {/* Error Display */}
                     {error && (
                         <div className="p-3 mb-6 bg-red-100 border border-red-400 text-red-700 rounded-xl text-sm font-medium" role="alert">
-                            **Error:** {error}
+                            Error: {error}
                         </div>
                     )}
 
@@ -239,8 +239,8 @@ export default function LoginSignup() {
                             <button
                                 onClick={handleGoogleSignIn}
                                 disabled={isSigningIn}
-                                className={`w-full py-3 px-4 rounded-xl text-lg font-bold text-black transition-all duration-300 shadow-lg flex items-center justify-center 
-                                    ${isSigningIn ? 'bg-gray-500 cursor-wait' : 'bg-blue-600 hover:bg-blue-700 shadow-blue-300/50'}`}
+                                className={`w-full py-1.5 px-2 rounded-[5rem] text-lg font-bold text-black transition-all duration-300 flex items-center justify-center text-[#1F1F1F] text-[14px] leading-[20px] font-medium font-roboto cursor-pointer
+                                    ${isSigningIn ? 'bg-gray-500 cursor-wait' : 'bg-[#FFFFFF]'}`}
                             >
                                 {isSigningIn ? (
                                     <>
@@ -249,8 +249,8 @@ export default function LoginSignup() {
                                 ) : (
                                     <>
                                         {/* Google SVG Icon */}
-                                        <svg className="w-5 h-5 mr-3 fill-white" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 9.5c3.54 0 6.71 1.22 9.21 3.56l6.62-6.38C35.2 4.13 29.98 2 24 2 13.95 2 5.25 8.18 2.76 16.27h7.94c.66-2.9 2.59-5.18 5.46-6.68 2.8-1.45 6.01-2.09 9.38-2.09zm0 30c-5.74 0-10.87-2.31-14.59-6.07l-6.52 6.5C8.04 45.41 15.65 48 24 48c9.02 0 17.06-3.78 22.75-9.76l-7.39-5.75c-2.35 1.5-5.22 2.38-8.36 2.38zM46 24c0-1.84-.17-3.66-.48-5.46H24v10.92h12.59c-.48 2.56-1.74 4.8-3.67 6.55l7.38 5.75C45.2 38.6 48 31.9 48 24z" /></svg>
-                                        Continue with Google
+                                        <Image src="/ContinueGoogle.png" alt="Google" height={200} width={200} className="mr-3" />
+                                        {/* Continue with Google */}
                                     </>
                                 )}
                             </button>
