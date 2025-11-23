@@ -27,7 +27,7 @@ const ProviderActions = ({ provider }) => (
   <div className="flex justify-around space-x-2 mt-3 pt-3 border-t border-gray-200">
     <a
       href={`tel:${provider.phone || '#'}`}
-      className="flex items-center text-sm text-gray-600 hover:text-blue-800 transition-colors font-medium group"
+      className="flex items-center text-sm text-gray-600 hover:text-blue-900 transition-colors font-medium group"
     >
       <Phone className="w-4 h-4 mr-1 group-hover:scale-105 transition-transform" /> Call
     </a>
@@ -175,12 +175,12 @@ export default function HomeView() {
       <main className="p-4 md:p-10">
         {/* --- Gem Upload Hero Section (Central Feature) --- */}
         <section className="text-center py-16 px-4 bg-white shadow-3xl rounded-3xl max-w-3xl mx-auto border-4 border-dashed border-blue-100/50">
-          <Sparkles className="mx-auto w-14 h-14 text-blue-800 animate-pulse" />
+          <Sparkles className="mx-auto w-14 h-14 text-blue-900 animate-pulse" />
           <h2 className="text-5xl font-extrabold text-gray-900 mt-4 tracking-tight">
-            Analyze Your <span className="text-blue-800">Rough Gem</span>
+            Analyze Your <span className="text-blue-900">Rough Gem</span>
           </h2>
           <p className="text-xl text-gray-600 mt-3 mb-10 max-w-lg mx-auto">
-            Our AI Gemologist predicts the optimal cut for maximum **brilliance** and **value**.
+            Our AI Gemologist predicts the optimal cut for maximum brilliance and value.
           </p>
 
           <label
@@ -204,14 +204,14 @@ export default function HomeView() {
             {isUploading ? (
               <div className="flex flex-col items-center">
                 <div className="animate-spin rounded-full h-14 w-14 border-b-4 border-blue-800 mb-4"></div>
-                <span className="font-extrabold text-blue-800 text-2xl">Analyzing Gem...</span>
+                <span className="font-extrabold text-blue-900 text-2xl">Analyzing Gem...</span>
                 <span className="block text-sm text-gray-600 mt-2">Processing image data for optimal geometry.</span>
               </div>
             ) : (
               <>
-                <UploadCloud className="mx-auto w-14 h-14 text-blue-800 mb-3" />
-                <span className="font-extrabold text-blue-800 text-xl md:text-2xl">Drop or Tap to Upload Image</span>
-                <span className="block text-sm text-gray-500 mt-1">Maximum 5MB (PNG or JPG). **No sign-up required.**</span>
+                <UploadCloud className="mx-auto w-14 h-14 text-blue-900 mb-3" />
+                <span className="font-extrabold text-blue-900 text-xl md:text-2xl">Drop or Tap to Upload Image</span>
+                <span className="block text-sm text-gray-500 mt-1">Maximum 5MB (PNG or JPG). No sign-up required.</span>
               </>
             )}
           </label>

@@ -6,6 +6,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signO
 import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore'; // Added getDoc
 // FIX: Added RotateCw to imports
 import { Diamond, LogIn, Lock, User, LogOut, RotateCw, CheckCircle } from 'lucide-react';
+import Image from "next/image";
 
 // --- Firebase Initialization and Path Helpers ---
 
@@ -158,8 +159,8 @@ export default function LoginSignup() {
     const renderHeader = () => (
         <header className="flex justify-between items-center px-6 py-4 bg-white border-b border-gray-100 shadow-md sticky top-0 z-20">
             <div className="flex items-center text-3xl font-black text-gray-900 tracking-tighter">
-                <Diamond className="w-8 h-8 text-blue-800 mr-2" />
-                <span className="text-blue-800">Gem</span><span className="text-gray-900">ora</span>
+                <Image src="/Logo.png" alt="Gemora Logo" height={70} width={70} className="mr-1" />
+                <span className="text-blue-900">GEM</span><span className="text-gray-900">ORA</span>
             </div>
             <nav className="flex items-center space-x-4">
                 <button
