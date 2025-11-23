@@ -134,12 +134,12 @@ export default function HomeView() {
     <header className="flex justify-between items-center px-6 py-4 bg-white border-b border-gray-100 shadow-md sticky top-0 z-20">
       <div className="flex items-center text-3xl font-black text-gray-900 tracking-tighter">
         <Image src="/Logo.png" alt="Gemora Logo" height={70} width={70} className="mr-1" />
-        <span className="text-blue-800">GEM</span><span className="text-gray-900">ORA</span>
+        <span className="text-blue-900">GEM</span><span className="text-gray-900">ORA</span>
       </div>
       <nav className="flex items-center space-x-4">
         <button
           onClick={() => window.location.href = '/'}
-          className={`py-2 px-4 rounded-lg text-sm font-semibold transition-colors text-blue-800 bg-blue-50 hover:bg-blue-100`}
+          className={`py-2 px-4 rounded-lg text-sm font-bold transition-all text-blue-900 bg-gradient-to-r from-blue-600 to-blue-800 shadow-md shadow-blue-200  hover:scale-[1.02]`}
           aria-current="page"
         >
           Home
@@ -147,17 +147,19 @@ export default function HomeView() {
 
         <button
           onClick={() => window.location.href = '/providers'}
-          className="text-black py-2 px-4 rounded-lg text-sm font-bold bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 transition-all shadow-md shadow-blue-200 flex items-center transform hover:scale-[1.02]"
+          className="text-blue-900 py-2 px-4 rounded-lg text-sm font-bold bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 transition-all shadow-md shadow-blue-200 flex items-center transform hover:scale-[1.02]"
         >
           <Users className="w-4 h-4 inline mr-2" /> Master Cutters
         </button>
 
         <button
           onClick={() => window.location.href = '/login'}
-          className="py-2 px-4 rounded-lg text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 transition-colors flex items-center"
+          className="py-2 px-4 rounded-lg text-sm text-blue-900 font-bold bg-gradient-to-r from-blue-600 to-blue-800 hover:scale-[1.02] transition-all flex items-center shadow-md shadow-blue-200"
         >
           <LogIn className="w-4 h-4 inline mr-2" /> Login
         </button>
+
+
       </nav>
     </header>
   );
