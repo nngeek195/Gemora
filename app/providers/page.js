@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Diamond, Users, ArrowLeft, MapPin, Phone, MessageCircle } from 'lucide-react';
+import Image from "next/image";
 
 // --- Static Data for Service Providers (Full List) ---
 const SRI_LANKA_LOCATIONS = [
@@ -68,8 +69,8 @@ export default function ProvidersPage() {
     const renderHeader = () => (
         <header className="flex justify-between items-center p-4 bg-white border-b border-gray-100 shadow-sm sticky top-0 z-10">
             <div className="flex items-center text-2xl font-extrabold text-gray-900 tracking-tight">
-                <Diamond className="w-7 h-7 text-amber-500 mr-2" />
-                <span className="text-amber-600">Gem</span><span className="text-gray-900">ora</span>
+                <Image src="/Logo.png" alt="Gemora Logo" height={70} width={70} className="mr-1" />
+                <span className="text-blue-900">GEM</span><span className="text-gray-900">ORA</span>
             </div>
             <nav className="flex items-center space-x-3">
                 <button onClick={() => window.location.href = '/'} className={`py-2 px-3 rounded-lg text-sm font-medium transition-colors text-gray-600 hover:bg-gray-50`}>Home</button>

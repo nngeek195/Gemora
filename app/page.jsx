@@ -3,6 +3,7 @@
 import React, { useState, useRef, useMemo } from 'react';
 import { Sparkles, Diamond, UploadCloud, LogIn, Users, MapPin, Phone, MessageCircle, Star } from 'lucide-react';
 import Image from "next/image";
+import { FaWhatsapp } from "react-icons/fa6";
 
 
 // --- Static Data for Service Providers ---
@@ -27,7 +28,7 @@ const ProviderActions = ({ provider }) => (
   <div className="flex justify-around space-x-2 mt-3 pt-3 border-t border-gray-200">
     <a
       href={`tel:${provider.phone || '#'}`}
-      className="flex items-center text-sm text-gray-600 hover:text-blue-900 transition-colors font-medium group"
+      className="flex items-center text-sm text-blue-900 transition-colors font-medium group"
     >
       <Phone className="w-4 h-4 mr-1 group-hover:scale-105 transition-transform" /> Call
     </a>
@@ -35,15 +36,15 @@ const ProviderActions = ({ provider }) => (
       href={`https://wa.me/${provider.whatsapp || '#'}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center text-sm text-gray-600 hover:text-blue-600 transition-colors font-medium group"
+      className="flex items-center text-sm text-green-600 transition-colors font-medium group"
     >
-      <MessageCircle className="w-4 h-4 mr-1 group-hover:scale-105 transition-transform" /> WhatsApp
+      <FaWhatsapp className="w-5 h-5 mr-1 group-hover:scale-105 transition-transform" /> WhatsApp
     </a>
     <a
       href={provider.mapLink || '#'}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center text-sm text-gray-600 hover:text-blue-700 transition-colors font-medium group"
+      className="flex items-center text-sm text-red-600 transition-colors font-medium group"
     >
       <MapPin className="w-4 h-4 mr-1 group-hover:scale-105 transition-transform" /> Location
     </a>
