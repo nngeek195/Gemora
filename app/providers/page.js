@@ -3,6 +3,8 @@
 import React from 'react';
 import { Diamond, Users, ArrowLeft, MapPin, Phone, MessageCircle } from 'lucide-react';
 import Image from "next/image";
+import { FaWhatsapp } from "react-icons/fa6";
+
 
 // --- Static Data for Service Providers (Full List) ---
 const SRI_LANKA_LOCATIONS = [
@@ -31,13 +33,13 @@ const SRI_LANKA_LOCATIONS = [
 // Provider action small component
 const ProviderActions = ({ provider }) => (
     <div className="flex justify-around space-x-2 mt-3 pt-3 border-t border-gray-100">
-        <a href="#" className="flex items-center text-sm text-gray-700 hover:text-blue-500 transition-colors">
+        <a href="#" className="flex items-center text-sm text-blue-900 transition-colors">
             <Phone className="w-4 h-4 mr-1" /> Call
         </a>
-        <a href="#" className="flex items-center text-sm text-gray-700 hover:text-green-500 transition-colors">
-            <MessageCircle className="w-4 h-4 mr-1" /> WhatsApp
+        <a href="#" className="flex items-center text-sm text-green-600 transition-colors">
+            <FaWhatsapp className="w-5 h-5 mr-1" /> WhatsApp
         </a>
-        <a href="#" target="_blank" rel="noreferrer" className="flex items-center text-sm text-gray-700 hover:text-pink-500 transition-colors">
+        <a href="#" target="_blank" rel="noreferrer" className="flex items-center text-sm text-red-600 transition-colors">
             <MapPin className="w-4 h-4 mr-1" /> Location
         </a>
     </div>
@@ -46,13 +48,13 @@ const ProviderActions = ({ provider }) => (
 const ServiceProviderCard = ({ provider, isHighlighted = false }) => (
     <div
         className={`p-4 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-[1.02] 
-      ${isHighlighted ? 'bg-amber-50 border-2 border-amber-400' : 'bg-white border border-gray-200'}`}
+      ${isHighlighted ? 'bg-blue-50 border-2 border-blue-400' : 'bg-white border border-gray-200'}`}
     >
         <div className="flex items-center">
-            <Diamond className={`w-6 h-6 mr-3 ${isHighlighted ? 'text-amber-600' : 'text-gray-500'}`} />
+            <Diamond className={`w-6 h-6 mr-3 ${isHighlighted ? 'text-blue-900' : 'text-gray-500'}`} />
             <div>
                 <h4 className="font-bold text-lg text-gray-900">{provider.name}</h4>
-                <p className="text-xs font-medium text-amber-600">{provider.specialty}</p>
+                <p className="text-xs font-medium text-blue-900">{provider.specialty}</p>
             </div>
         </div>
         <p className="text-sm text-gray-500 mt-2 flex items-center">
@@ -97,7 +99,7 @@ export default function ProvidersPage() {
                         <ArrowLeft className="w-4 h-4 mr-1" /> Back to Gemora Home
                     </button>
 
-                    <h2 className="text-4xl font-extrabold text-amber-700 text-center border-b pb-4">
+                    <h2 className="text-4xl text-blue-900 font-extrabold text-amber-700 text-center border-b pb-4">
                         All Certified Gem Cut Service Providers ({SRI_LANKA_LOCATIONS.length})
                     </h2>
                     <p className="text-center text-gray-600">Connect directly with our network of experienced gem cutters located throughout Sri Lanka.</p>
