@@ -8,6 +8,7 @@ import { getAuth, signOut, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, doc, setDoc, getDoc, collection, query, getDocs, deleteDoc, Timestamp } from 'firebase/firestore';
 
 import { Diamond, LogIn, User, History, MapPin, Phone, MessageCircle, ArrowLeft, Sparkles, XCircle, RotateCw, UploadCloud, Save, Award, Trash2 } from 'lucide-react';
+import Image from "next/image";
 
 // --- Static Data (Rest of the component's non-Firebase helpers remain the same) ---
 const SRI_LANKA_LOCATIONS = [
@@ -462,8 +463,8 @@ export default function ProfileView() {
         return (
             <header className="flex justify-between items-center px-6 py-4 bg-white border-b border-gray-100 shadow-md sticky top-0 z-20">
                 <div className="flex items-center text-3xl font-black text-gray-900 tracking-tighter">
-                    <Diamond className="w-8 h-8 text-blue-800 mr-2" />
-                    <span className="text-blue-800">Gem</span><span className="text-gray-900">ora</span>
+                    <Image src="/Logo.png" alt="Gemora Logo" height={70} width={70} className="mr-1" />
+                    <span className="text-blue-900">GEM</span><span className="text-gray-900">ORA</span>
                 </div>
                 <nav className="flex items-center space-x-4">
                     <div className="flex items-center text-sm font-semibold text-gray-700 p-2 rounded-full bg-gray-100">
