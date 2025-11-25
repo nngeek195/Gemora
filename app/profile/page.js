@@ -427,15 +427,15 @@ export default function ProfileView() {
 
                 <form onSubmit={handleWelcomeSubmit} className="space-y-4">
                     <div>
-                        <label htmlFor="name" className="block text-sm font-semibold text-gray-700">Your Preferred Name</label>
+                        <label htmlFor="name" className="block text-sm font-semibold text-black">Your Preferred Name</label>
                         <input id="name" type="text" placeholder="Enter your name" required value={onboardingData.name} onChange={(e) => setOnboardingData({ ...onboardingData, name: e.target.value })} className="mt-1 block w-full rounded-lg border border-gray-300 shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500" />
                     </div>
                     <div>
-                        <label htmlFor="contact" className="block text-sm font-semibold text-gray-700">Contact Number (For service providers)</label>
+                        <label htmlFor="contact" className="block text-sm font-semibold text-black">Contact Number (For service providers)</label>
                         <input id="contact" type="tel" placeholder="+94 77 XXXXXXX" required value={onboardingData.contact} onChange={(e) => setOnboardingData({ ...onboardingData, contact: e.target.value })} className="mt-1 block w-full rounded-lg border border-gray-300 shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500" />
                     </div>
                     <div>
-                        <label htmlFor="knowledge" className="block text-sm font-semibold text-gray-700">Your knowledge about gems?</label>
+                        <label htmlFor="knowledge" className="block text-sm font-semibold text-black">Your knowledge about gems?</label>
                         <select id="knowledge" required value={onboardingData.knowledge} onChange={(e) => setOnboardingData({ ...onboardingData, knowledge: e.target.value })} className="mt-1 block w-full rounded-lg border border-gray-300 shadow-sm p-3 bg-white focus:ring-blue-500 focus:border-blue-500">
                             <option value="beginner">Beginner (First time rough stone owner)</option>
                             <option value="hobbyist">Hobbyist (I collect occasionally)</option>
@@ -602,9 +602,7 @@ export default function ProfileView() {
                         <h2 className="text-4xl font-extrabold text-gray-900 flex items-center">
                             <User className="w-8 h-8 mr-3 text-blue-800" /> Your Gem Profile
                         </h2>
-                        <button className="text-gray-500 hover:text-blue-800 flex items-center text-sm font-semibold transition-colors" onClick={() => window.location.href = '/'}>
-                            <ArrowLeft className="w-4 h-4 mr-1" /> Return to Home
-                        </button>
+
                     </div>
 
                     {isHistoryLoading && (
