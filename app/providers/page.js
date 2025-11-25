@@ -87,7 +87,7 @@ export default function ProvidersPage() {
     );
 
     return (
-        <div className="min-h-screen bg-gray-50 font-inter">
+        <div className="min-h-screen bg-sky-50 font-inter">
             <style>{`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');body { font-family: 'Inter', sans-serif; }`}</style>
             <script src="https://cdn.tailwindcss.com"></script>
 
