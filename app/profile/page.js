@@ -133,7 +133,7 @@ function GeminiAssistantPopup({ userName = 'Guest', knowledgeLevel = 'beginner' 
     const [messages, setMessages] = useState([
         {
             role: 'assistant',
-            text: "Hi! I'm your Gemora AI assistant powered by Gemini. Ask me anything about gems, cuts, value, or how to work with your rough stones. 💎",
+            text: "Hi! I'm your Gemora AI assistant powered by Gemora. Ask me anything about gems, cuts, value, or how to work with your rough stones. 💎",
         },
     ]);
     const [input, setInput] = useState('');
@@ -238,8 +238,8 @@ Be concise, friendly, and give practical advice related to gems, rough stones, c
                             >
                                 <div
                                     className={`px-3 py-2 rounded-2xl text-sm max-w-[80%] whitespace-pre-wrap ${m.role === 'user'
-                                            ? 'bg-blue-800 text-white rounded-br-sm'
-                                            : 'bg-white border border-gray-200 text-gray-800 rounded-bl-sm'
+                                        ? 'bg-blue-800 text-white rounded-br-sm'
+                                        : 'bg-white border border-gray-200 text-gray-800 rounded-bl-sm'
                                         }`}
                                 >
                                     {m.text}
@@ -290,8 +290,8 @@ Be concise, friendly, and give practical advice related to gems, rough stones, c
                             onClick={handleSend}
                             disabled={isLoading || !input.trim()}
                             className={`p-2 rounded-full ${isLoading || !input.trim()
-                                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                                    : 'bg-blue-800 text-white hover:bg-blue-900'
+                                ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                                : 'bg-blue-800 text-white hover:bg-blue-900'
                                 }`}
                         >
                             <Send className="w-4 h-4" />
