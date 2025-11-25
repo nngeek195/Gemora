@@ -2,6 +2,9 @@
 
 import React, { useState, useRef, useMemo } from 'react';
 import { Sparkles, Diamond, UploadCloud, LogIn, Users, MapPin, Phone, MessageCircle, Star } from 'lucide-react';
+import Image from "next/image";
+import { FaWhatsapp } from "react-icons/fa6";
+
 
 // --- Static Data for Service Providers ---
 const SRI_LANKA_LOCATIONS = [
@@ -25,7 +28,7 @@ const ProviderActions = ({ provider }) => (
   <div className="flex justify-around space-x-2 mt-3 pt-3 border-t border-gray-200">
     <a
       href={`tel:${provider.phone || '#'}`}
-      className="flex items-center text-sm text-gray-600 hover:text-blue-800 transition-colors font-medium group"
+      className="flex items-center text-sm text-blue-900 transition-colors font-medium group"
     >
       <Phone className="w-4 h-4 mr-1 group-hover:scale-105 transition-transform" /> Call
     </a>
@@ -33,15 +36,15 @@ const ProviderActions = ({ provider }) => (
       href={`https://wa.me/${provider.whatsapp || '#'}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center text-sm text-gray-600 hover:text-blue-600 transition-colors font-medium group"
+      className="flex items-center text-sm text-green-600 transition-colors font-medium group"
     >
-      <MessageCircle className="w-4 h-4 mr-1 group-hover:scale-105 transition-transform" /> WhatsApp
+      <FaWhatsapp className="w-5 h-5 mr-1 group-hover:scale-105 transition-transform" /> WhatsApp
     </a>
     <a
       href={provider.mapLink || '#'}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center text-sm text-gray-600 hover:text-blue-700 transition-colors font-medium group"
+      className="flex items-center text-sm text-red-600 transition-colors font-medium group"
     >
       <MapPin className="w-4 h-4 mr-1 group-hover:scale-105 transition-transform" /> Location
     </a>
@@ -131,13 +134,13 @@ export default function HomeView() {
   const renderHeader = () => (
     <header className="flex justify-between items-center px-6 py-4 bg-white border-b border-gray-100 shadow-md sticky top-0 z-20">
       <div className="flex items-center text-3xl font-black text-gray-900 tracking-tighter">
-        <Diamond className="w-8 h-8 text-blue-800 mr-2" />
-        <span className="text-blue-800">Gem</span><span className="text-gray-900">ora</span>
+        <Image src="/Logo.png" alt="Gemora Logo" height={70} width={70} className="mr-1" />
+        <span className="text-blue-900">GEM</span><span className="text-gray-900">ORA</span>
       </div>
       <nav className="flex items-center space-x-4">
         <button
           onClick={() => window.location.href = '/'}
-          className={`py-2 px-4 rounded-lg text-sm font-semibold transition-colors text-blue-800 bg-blue-50 hover:bg-blue-100`}
+          className={`py-2 px-4 rounded-lg text-sm font-bold transition-all text-blue-900 bg-gradient-to-r from-blue-600 to-blue-800 shadow-md shadow-blue-200  hover:scale-[1.02]`}
           aria-current="page"
         >
           Home
@@ -145,23 +148,25 @@ export default function HomeView() {
 
         <button
           onClick={() => window.location.href = '/providers'}
-          className="text-black py-2 px-4 rounded-lg text-sm font-bold bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 transition-all shadow-md shadow-blue-200 flex items-center transform hover:scale-[1.02]"
+          className="text-blue-900 py-2 px-4 rounded-lg text-sm font-bold bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 transition-all shadow-md shadow-blue-200 flex items-center transform hover:scale-[1.02]"
         >
           <Users className="w-4 h-4 inline mr-2" /> Master Cutters
         </button>
 
         <button
           onClick={() => window.location.href = '/login'}
-          className="py-2 px-4 rounded-lg text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 transition-colors flex items-center"
+          className="py-2 px-4 rounded-lg text-sm text-blue-900 font-bold bg-gradient-to-r from-blue-600 to-blue-800 hover:scale-[1.02] transition-all flex items-center shadow-md shadow-blue-200"
         >
           <LogIn className="w-4 h-4 inline mr-2" /> Login
         </button>
+
+
       </nav>
     </header>
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 font-inter">
+    <div className="min-h-screen bg-sky-50 font-inter">
       {/* Import Inter font for modern typography */}
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');body { font-family: 'Inter', sans-serif; }`}</style>
       <script src="https://cdn.tailwindcss.com"></script>
@@ -171,12 +176,12 @@ export default function HomeView() {
       <main className="p-4 md:p-10">
         {/* --- Gem Upload Hero Section (Central Feature) --- */}
         <section className="text-center py-16 px-4 bg-white shadow-3xl rounded-3xl max-w-3xl mx-auto border-4 border-dashed border-blue-100/50">
-          <Sparkles className="mx-auto w-14 h-14 text-blue-800 animate-pulse" />
+          <Sparkles className="mx-auto w-14 h-14 text-blue-900 animate-pulse" />
           <h2 className="text-5xl font-extrabold text-gray-900 mt-4 tracking-tight">
-            Analyze Your <span className="text-blue-800">Rough Gem</span>
+            Analyze Your <span className="text-blue-900">Rough Gem</span>
           </h2>
           <p className="text-xl text-gray-600 mt-3 mb-10 max-w-lg mx-auto">
-            Our AI Gemologist predicts the optimal cut for maximum **brilliance** and **value**.
+            Our AI Gemologist predicts the optimal cut for maximum brilliance and value.
           </p>
 
           <label
@@ -200,14 +205,14 @@ export default function HomeView() {
             {isUploading ? (
               <div className="flex flex-col items-center">
                 <div className="animate-spin rounded-full h-14 w-14 border-b-4 border-blue-800 mb-4"></div>
-                <span className="font-extrabold text-blue-800 text-2xl">Analyzing Gem...</span>
+                <span className="font-extrabold text-blue-900 text-2xl">Analyzing Gem...</span>
                 <span className="block text-sm text-gray-600 mt-2">Processing image data for optimal geometry.</span>
               </div>
             ) : (
               <>
-                <UploadCloud className="mx-auto w-14 h-14 text-blue-800 mb-3" />
-                <span className="font-extrabold text-blue-800 text-xl md:text-2xl">Drop or Tap to Upload Image</span>
-                <span className="block text-sm text-gray-500 mt-1">Maximum 5MB (PNG or JPG). **No sign-up required.**</span>
+                <UploadCloud className="mx-auto w-14 h-14 text-blue-900 mb-3" />
+                <span className="font-extrabold text-blue-900 text-xl md:text-2xl">Drop or Tap to Upload Image</span>
+                <span className="block text-sm text-gray-500 mt-1">Maximum 5MB (PNG or JPG). No sign-up required.</span>
               </>
             )}
           </label>

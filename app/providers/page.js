@@ -2,6 +2,9 @@
 
 import React from 'react';
 import { Diamond, Users, ArrowLeft, MapPin, Phone, MessageCircle } from 'lucide-react';
+import Image from "next/image";
+import { FaWhatsapp } from "react-icons/fa6";
+
 
 // --- Static Data for Service Providers (Full List) ---
 const SRI_LANKA_LOCATIONS = [
@@ -30,13 +33,13 @@ const SRI_LANKA_LOCATIONS = [
 // Provider action small component
 const ProviderActions = ({ provider }) => (
     <div className="flex justify-around space-x-2 mt-3 pt-3 border-t border-gray-100">
-        <a href="#" className="flex items-center text-sm text-gray-700 hover:text-blue-500 transition-colors">
+        <a href="#" className="flex items-center text-sm text-blue-900 transition-colors">
             <Phone className="w-4 h-4 mr-1" /> Call
         </a>
-        <a href="#" className="flex items-center text-sm text-gray-700 hover:text-green-500 transition-colors">
-            <MessageCircle className="w-4 h-4 mr-1" /> WhatsApp
+        <a href="#" className="flex items-center text-sm text-green-600 transition-colors">
+            <FaWhatsapp className="w-5 h-5 mr-1" /> WhatsApp
         </a>
-        <a href="#" target="_blank" rel="noreferrer" className="flex items-center text-sm text-gray-700 hover:text-pink-500 transition-colors">
+        <a href="#" target="_blank" rel="noreferrer" className="flex items-center text-sm text-red-600 transition-colors">
             <MapPin className="w-4 h-4 mr-1" /> Location
         </a>
     </div>
@@ -45,13 +48,13 @@ const ProviderActions = ({ provider }) => (
 const ServiceProviderCard = ({ provider, isHighlighted = false }) => (
     <div
         className={`p-4 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-[1.02] 
-      ${isHighlighted ? 'bg-amber-50 border-2 border-amber-400' : 'bg-white border border-gray-200'}`}
+      ${isHighlighted ? 'bg-blue-50 border-2 border-blue-400' : 'bg-white border border-gray-200'}`}
     >
         <div className="flex items-center">
-            <Diamond className={`w-6 h-6 mr-3 ${isHighlighted ? 'text-amber-600' : 'text-gray-500'}`} />
+            <Diamond className={`w-6 h-6 mr-3 ${isHighlighted ? 'text-blue-900' : 'text-gray-500'}`} />
             <div>
                 <h4 className="font-bold text-lg text-gray-900">{provider.name}</h4>
-                <p className="text-xs font-medium text-amber-600">{provider.specialty}</p>
+                <p className="text-xs font-medium text-blue-900">{provider.specialty}</p>
             </div>
         </div>
         <p className="text-sm text-gray-500 mt-2 flex items-center">
@@ -68,15 +71,15 @@ export default function ProvidersPage() {
     const renderHeader = () => (
         <header className="flex justify-between items-center p-4 bg-white border-b border-gray-100 shadow-sm sticky top-0 z-10">
             <div className="flex items-center text-2xl font-extrabold text-gray-900 tracking-tight">
-                <Diamond className="w-7 h-7 text-amber-500 mr-2" />
-                <span className="text-amber-600">Gem</span><span className="text-gray-900">ora</span>
+                <Image src="/Logo.png" alt="Gemora Logo" height={70} width={70} className="mr-1" />
+                <span className="text-blue-900">GEM</span><span className="text-gray-900">ORA</span>
             </div>
             <nav className="flex items-center space-x-3">
-                <button onClick={() => window.location.href = '/'} className={`py-2 px-3 rounded-lg text-sm font-medium transition-colors text-gray-600 hover:bg-gray-50`}>Home</button>
-                <button className="text-black py-2 px-4 rounded-lg text-sm font-bold bg-gradient-to-r from-yellow-600 to-amber-500 shadow-lg flex items-center">
+                <button onClick={() => window.location.href = '/'} className={`py-2 px-4 rounded-lg text-sm font-bold transition-all text-blue-900 bg-gradient-to-r from-blue-600 to-blue-800 shadow-md shadow-blue-200  hover:scale-[1.02]`}>Home</button>
+                <button className="text-blue-900 py-2 px-4 rounded-lg text-sm font-bold bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 transition-all shadow-md shadow-blue-200 flex items-center transform hover:scale-[1.02]">
                     <Users className="w-4 h-4 inline mr-1" /> Service Providers
                 </button>
-                <button onClick={() => window.location.href = '/login'} className="py-2 px-3 rounded-lg text-sm font-medium text-black bg-accent hover:bg-[#5cb9ff] transition-colors flex items-center">
+                <button onClick={() => window.location.href = '/login'} className="py-2 px-4 rounded-lg text-sm text-blue-900 font-bold bg-gradient-to-r from-blue-600 to-blue-800 hover:scale-[1.02] transition-all flex items-center shadow-md shadow-blue-200">
                     Login
                 </button>
             </nav>
@@ -84,7 +87,7 @@ export default function ProvidersPage() {
     );
 
     return (
-        <div className="min-h-screen bg-gray-50 font-inter">
+        <div className="min-h-screen bg-sky-50 font-inter">
             <style>{`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');body { font-family: 'Inter', sans-serif; }`}</style>
             <script src="https://cdn.tailwindcss.com"></script>
 
@@ -96,7 +99,7 @@ export default function ProvidersPage() {
                         <ArrowLeft className="w-4 h-4 mr-1" /> Back to Gemora Home
                     </button>
 
-                    <h2 className="text-4xl font-extrabold text-amber-700 text-center border-b pb-4">
+                    <h2 className="text-4xl text-blue-900 font-extrabold text-amber-700 text-center border-b pb-4">
                         All Certified Gem Cut Service Providers ({SRI_LANKA_LOCATIONS.length})
                     </h2>
                     <p className="text-center text-gray-600">Connect directly with our network of experienced gem cutters located throughout Sri Lanka.</p>

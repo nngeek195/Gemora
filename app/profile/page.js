@@ -8,6 +8,8 @@ import { getAuth, signOut, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, doc, setDoc, getDoc, collection, query, getDocs, deleteDoc, Timestamp } from 'firebase/firestore';
 
 import { Diamond, LogIn, User, History, MapPin, Phone, MessageCircle, ArrowLeft, Sparkles, XCircle, RotateCw, UploadCloud, Save, Award, Trash2 } from 'lucide-react';
+import Image from "next/image";
+import { FaWhatsapp } from "react-icons/fa6";
 
 // --- Static Data (Rest of the component's non-Firebase helpers remain the same) ---
 const SRI_LANKA_LOCATIONS = [
@@ -74,9 +76,9 @@ const getUserArtifactsPath = (userId) => {
 // --- Sub-Components (Unchanged UI/Logic) ---
 const ProviderActions = ({ provider }) => (
     <div className="flex justify-around space-x-2 mt-3 pt-3 border-t border-gray-200">
-        <a href="#" className="flex items-center text-sm text-gray-600 hover:text-blue-600 transition-colors"><Phone className="w-4 h-4 mr-1" /> Call</a>
-        <a href="#" className="flex items-center text-sm text-gray-600 hover:text-green-600 transition-colors"><MessageCircle className="w-4 h-4 mr-1" /> WhatsApp</a>
-        <a href="#" target="_blank" rel="noreferrer" className="flex items-center text-sm text-gray-600 hover:text-blue-700 transition-colors"><MapPin className="w-4 h-4 mr-1" /> Location</a>
+        <a href="#" className="flex items-center text-sm text-blue-900 transition-colors"><Phone className="w-4 h-4 mr-1" /> Call</a>
+        <a href="#" className="flex items-center text-sm text-green-600 transition-colors"><FaWhatsapp className="w-5 h-5 mr-1" /> WhatsApp</a>
+        <a href="#" target="_blank" rel="noreferrer" className="flex items-center text-sm text-red-600 transition-colors"><MapPin className="w-4 h-4 mr-1" /> Location</a>
     </div>
 );
 
@@ -462,22 +464,22 @@ export default function ProfileView() {
         return (
             <header className="flex justify-between items-center px-6 py-4 bg-white border-b border-gray-100 shadow-md sticky top-0 z-20">
                 <div className="flex items-center text-3xl font-black text-gray-900 tracking-tighter">
-                    <Diamond className="w-8 h-8 text-blue-800 mr-2" />
-                    <span className="text-blue-800">Gem</span><span className="text-gray-900">ora</span>
+                    <Image src="/Logo.png" alt="Gemora Logo" height={70} width={70} className="mr-1" />
+                    <span className="text-blue-900">GEM</span><span className="text-gray-900">ORA</span>
                 </div>
                 <nav className="flex items-center space-x-4">
                     <div className="flex items-center text-sm font-semibold text-gray-700 p-2 rounded-full bg-gray-100">
-                        <User className="w-4 h-4 mr-1 text-blue-800" /> **{firstName}**
+                        <User className="w-4 h-4 mr-1 text-blue-800" /> {firstName}
                     </div>
                     <button
                         onClick={() => setShowHistory(!showHistory)}
                         disabled={showWelcomeModal || isHistoryLoading}
                         className={`py-2 px-4 rounded-lg text-sm font-bold transition-colors flex items-center shadow-sm 
-                            ${showHistory ? 'text-black bg-blue-800 hover:bg-blue-900' : 'text-gray-600 bg-gray-100 hover:bg-gray-200'} ${showWelcomeModal || isHistoryLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            ${showHistory ? 'text-black bg-blue-800 hover:bg-blue-900' : 'text-gray-600 shadow-md shadow-blue-200 hover:scale-[1.02]'} ${showWelcomeModal || isHistoryLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
                         <History className="w-4 h-4 inline mr-2" /> {showHistory ? 'New Prediction' : 'View History'}
                     </button>
-                    <button onClick={handleLogout} disabled={showWelcomeModal} className={`py-2 px-4 rounded-lg text-sm font-semibold text-black bg-gray-200 hover:bg-gray-300 transition-colors flex items-center shadow-sm ${showWelcomeModal ? 'opacity-50 cursor-not-allowed' : ''}`}>
+                    <button onClick={handleLogout} disabled={showWelcomeModal} className={`py-2 px-4 rounded-lg text-sm font-semibold text-black shadow-md shadow-blue-200 hover:scale-[1.02] transition-colors flex items-center shadow-sm ${showWelcomeModal ? 'opacity-50 cursor-not-allowed' : ''}`}>
                         <LogIn className="w-4 h-4 inline mr-2 rotate-180" /> Logout
                     </button>
                 </nav>
@@ -507,7 +509,7 @@ export default function ProfileView() {
                     onClick={handlePrediction}
                     disabled={isLoading || !gemFile}
                     className={`w-full py-3 px-4 rounded-lg font-bold text-black transition-all duration-300 shadow-lg flex items-center justify-center 
-                        ${isLoading || !gemFile ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-800 hover:bg-blue-900 shadow-blue-300/50'}`}
+                        ${isLoading || !gemFile ? 'shadow-md shadow-blue-200 cursor-not-allowed' : 'bg-blue-800 hover:bg-blue-900 shadow-blue-300/50'}`}
                 >
                     {isLoading ? <><RotateCw className="w-5 h-5 mr-2 animate-spin" /> Analyzing Geometry...</> : <><Sparkles className="w-5 h-5 mr-2" /> Run AI Analysis</>}
                 </button>
@@ -521,7 +523,7 @@ export default function ProfileView() {
                             <p className="text-lg text-blue-700 font-semibold flex items-center"><Sparkles className='w-5 h-5 mr-2' /> OPTIMAL RECOMMENDED CUT:</p>
                             <div className="text-5xl font-black text-blue-900 mt-2 tracking-wider">{cutPrediction.toUpperCase()}</div>
 
-                            <p className="text-md text-blue-700 mt-3">This shape is predicted to maximize the **brilliance** and retain the highest possible **carat weight** based on the rough stone's geometry.</p>
+                            <p className="text-md text-blue-700 mt-3">This shape is predicted to maximize the **brilliance** and retain the highest possible carat weight based on the rough stone's geometry.</p>
                             <button
                                 onClick={handleSavePrediction}
                                 disabled={isLoading}
@@ -563,7 +565,7 @@ export default function ProfileView() {
 
                         <div className='flex-grow'>
                             <p className="font-extrabold text-xl text-gray-900">{item.cut.toUpperCase()}</p>
-                            <p className="text-sm text-gray-600 mt-0.5">Rough Stone: **{item.stone || 'Unnamed Stone'}** | Saved: {item.date}</p>
+                            <p className="text-sm text-gray-600 mt-0.5">Rough Stone: {item.stone || 'Unnamed Stone'} | Saved: {item.date}</p>
                             <p className="text-xs text-blue-700 mt-1">Owner Profile: {item.knowledgeLevel.toUpperCase()}</p>
                         </div>
 
@@ -579,7 +581,7 @@ export default function ProfileView() {
                 )) : (
                     <div className="p-6 text-center text-gray-500 bg-gray-100 rounded-lg shadow-inner">
                         <History className='w-8 h-8 mx-auto mb-3 text-gray-400' />
-                        <p className='font-medium'>No analysis history found. Run a prediction and click **'Save Result to History'** to track your gems!</p>
+                        <p className='font-medium'>No analysis history found. Run a prediction and click 'Save Result to History' to track your gems!</p>
                     </div>
                 )}
             </div>
@@ -587,7 +589,7 @@ export default function ProfileView() {
     );
 
     return (
-        <div className="min-h-screen bg-gray-50 font-inter">
+        <div className="min-h-screen bg-sky-50 font-inter">
             <style>{`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');body { font-family: 'Inter', sans-serif; }`}</style>
             <script src="https://cdn.tailwindcss.com"></script>
 
